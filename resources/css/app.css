@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    @variants responsive {
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    }
+}
+
+
+
+.carousel-carousel>div {
+    @apply bg-gray px-4 py-2 rounded-lg text-textColor text-sm normal-case flex flex-none cursor-pointer
+}
+
+.filter-tabs {
+    @apply grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4
+}
+
+.course-image {
+    @apply h-72 sm:h-44 md:h-64 2xl:h-52 relative rounded-xl
+}
+
+.side-menu-open .filter-tabs {
+    @apply lg:grid-cols-4
+}
+
+.carousel-carousel>div.active {
+    @apply bg-black text-white cursor-auto
+}
+
+.is-invalid {
+    @apply border-red-500
+}
+
+.invalid-feedback {
+    @apply text-sm text-red-500
+}
+
+.tabs {
+    /* @apply flex justify-between mt-4 rounded-2xl px-4 */
+}
+
+.tabs a {
+    @apply relative py-2 cursor-pointer
+}
+
+.tabs .active::after {
+    content: "";
+    @apply absolute bottom-0 left-0 bg-primary w-full h-1 rounded-full
+}
+
+.menu {
+    @apply xl:p-2
+}
+
+.menu :where(li:not(.menu-title) > *:not(ul):not(details):not(.menu-title)), .menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+    @apply md:flex md:text-center xl:grid xl:text-left px-0 xl:px-3
+}
+
+.menu.side-menu li a span {
+    @apply w-auto xl:w-36 md:pl-0 xl:pl-4 md:text-xs lg:text-base
+}
+
+.sidebar-title {
+    @apply relative
+}
+
+.sidebar-title:after {
+    content: "";
+    @apply bg-primary h-1 w-10 absolute -bottom-2 left-0 rounded-full
+}
+
+div:where(.swal2-container) .swal2-html-container {
+    text-align: left !important;
+}
+
+#webinarDemoVideoPlayerCover.webinarDemoVideoPlayer,
+.learning-content-video-player .video-js {
+    @apply w-full h-[250px] sm:h-[440px] lg:h-[700px] rounded-lg overflow-hidden
+}
+
+.video-js {
+    width: 100% !important;
+    border-radius: 10px;
+}
+
+.video-js iframe,
+.video-js .vjs-poster,
+.video-js video {
+    border-radius: 10px;
+}
+
+.video-js .vjs-big-play-button {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+}
+
+.inset-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.learning-page-tabs .tab-item.active {
+    @apply bg-gray
+}
